@@ -1165,7 +1165,8 @@
 				"data-mtime": mtime,
 				"data-etag": fileData.etag,
 				"data-permissions": fileData.permissions || this.getDirectoryPermissions(),
-				"data-has-preview": fileData.hasPreview !== false
+				"data-has-preview": fileData.hasPreview !== false,
+				"data-e2eencrypted": (type === 'dir' && fileData.isEncrypted)
 			});
 
 			if (dataIcon) {
