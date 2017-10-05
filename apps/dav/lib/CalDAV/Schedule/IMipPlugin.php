@@ -184,7 +184,7 @@ class IMipPlugin extends SabreIMipPlugin {
 			'meeting_title' => $meetingTitle ?: $defaultVal,
 			'meeting_description' => $meetingDescription ?: $defaultVal,
 			'meeting_start' => $meetingStart,
-			'meeting_end' => $meetingStart,
+			'meeting_end' => $meetingEnd,
 			'meeting_url' => $meetingUrl ?: $defaultVal,
 		);
 		$templates = $this->getInviteTemplates($l10n, $templateParams);
