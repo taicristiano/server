@@ -179,13 +179,13 @@ class IMipPlugin extends SabreIMipPlugin {
 
 		$defaultVal = '--';
 		$templateParams = array(
-			'attendee_name' => $meetingAttendeeName ?: $defaultVal,
-			'invitee_name' => $meetingInviteeName ?: $defaultVal,
-			'meeting_title' => $meetingTitle ?: $defaultVal,
-			'meeting_description' => $meetingDescription ?: $defaultVal,
-			'meeting_start' => $meetingStart,
-			'meeting_end' => $meetingEnd,
-			'meeting_url' => $meetingUrl ?: $defaultVal,
+			'attendee_name' => (string)$meetingAttendeeName ?: $defaultVal,
+			'invitee_name' => (string)$meetingInviteeName ?: $defaultVal,
+			'meeting_title' => (string)$meetingTitle ?: $defaultVal,
+			'meeting_description' => (string)$meetingDescription ?: $defaultVal,
+			'meeting_start' => (string)$meetingStart,
+			'meeting_end' => (string)$meetingEnd,
+			'meeting_url' => (string)$meetingUrl ?: $defaultVal,
 		);
 		$templates = $this->getInviteTemplates($l10n, $templateParams);
 
