@@ -1247,7 +1247,9 @@
 					if (firstConflictPath.charAt(0) === '/') {
 						firstConflictPath = firstConflictPath.substr(1);
 					}
-					$firstConflict.find('td.filename span.innernametext').prepend($('<span></span>').addClass('conflict-path').text(firstConflictPath));
+					if (path && path !== '/') {
+						$firstConflict.find('td.filename span.innernametext').prepend($('<span></span>').addClass('conflict-path').text(firstConflictPath));
+					}
 				}
 
 				var conflictPath = path + '/';
