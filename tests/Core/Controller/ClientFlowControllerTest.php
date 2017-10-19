@@ -160,8 +160,12 @@ class ClientFlowLoginControllerTest extends TestCase {
 			->willReturn('ExampleCloud');
 		$this->request
 			->expects($this->once())
+			->method('getServerProtocol')
+			->willReturn('http');
+		$this->request
+			->expects($this->once())
 			->method('getServerHost')
-			->willReturn('http://example.com');
+			->willReturn('example.com');
 
 		$expected = new TemplateResponse(
 			'core',
@@ -172,7 +176,7 @@ class ClientFlowLoginControllerTest extends TestCase {
 				'instanceName' => 'ExampleCloud',
 				'urlGenerator' => $this->urlGenerator,
 				'stateToken' => 'StateToken',
-				'serverHost' => 'http://example.com',
+				'serverHost' => 'example.com',
 				'oauthState' => 'OauthStateToken',
 			],
 			'guest'
@@ -216,8 +220,12 @@ class ClientFlowLoginControllerTest extends TestCase {
 			->willReturn('ExampleCloud');
 		$this->request
 			->expects($this->once())
+			->method('getServerProtocol')
+			->willReturn('http');
+		$this->request
+			->expects($this->once())
 			->method('getServerHost')
-			->willReturn('http://example.com');
+			->willReturn('example.com');
 
 		$expected = new TemplateResponse(
 			'core',
@@ -228,7 +236,7 @@ class ClientFlowLoginControllerTest extends TestCase {
 				'instanceName' => 'ExampleCloud',
 				'urlGenerator' => $this->urlGenerator,
 				'stateToken' => 'StateToken',
-				'serverHost' => 'http://example.com',
+				'serverHost' => 'example.com',
 				'oauthState' => 'OauthStateToken',
 			],
 			'guest'
@@ -425,8 +433,12 @@ class ClientFlowLoginControllerTest extends TestCase {
 			);
 		$this->request
 			->expects($this->once())
+			->method('getServerProtocol')
+			->willReturn('http');
+		$this->request
+			->expects($this->once())
 			->method('getServerHost')
-			->willReturn('http://example.com');
+			->willReturn('example.com');
 
 		$expected = new Http\RedirectResponse('nc://login/server:http://example.com&user:MyLoginName&password:MyGeneratedToken');
 		$this->assertEquals($expected, $this->clientFlowLoginController->generateAppPassword('MyStateToken'));
@@ -573,8 +585,12 @@ class ClientFlowLoginControllerTest extends TestCase {
 			);
 		$this->request
 			->expects($this->once())
+			->method('getServerProtocol')
+			->willReturn('http');
+		$this->request
+			->expects($this->once())
 			->method('getServerHost')
-			->willReturn('http://example.com');
+			->willReturn('example.com');
 
 		$expected = new Http\RedirectResponse('nc://login/server:http://example.com&user:MyLoginName&password:MyGeneratedToken');
 		$this->assertEquals($expected, $this->clientFlowLoginController->generateAppPassword('MyStateToken'));
